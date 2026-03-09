@@ -1,15 +1,6 @@
 import { Button } from "@/components/ui/button";
 import heroPizza from "@/assets/hero-pizza.png";
 
-const floatingIngredients = [
-  { emoji: "🍅", className: "top-[15%] left-[8%] animate-float text-4xl", delay: "0s" },
-  { emoji: "🌿", className: "top-[25%] right-[10%] animate-float-reverse text-3xl", delay: "1s" },
-  { emoji: "🫒", className: "bottom-[30%] left-[12%] animate-float text-2xl", delay: "0.5s" },
-  { emoji: "🍄", className: "bottom-[20%] right-[8%] animate-float-reverse text-3xl", delay: "1.5s" },
-  { emoji: "🧀", className: "top-[40%] left-[3%] animate-float text-2xl", delay: "2s" },
-  { emoji: "🌶️", className: "top-[10%] right-[25%] animate-float-reverse text-2xl", delay: "0.8s" },
-];
-
 const steamLines = [0, 1, 2, 3, 4];
 
 const Hero = () => {
@@ -18,28 +9,6 @@ const Hero = () => {
       id="home"
       className="relative min-h-screen flex items-center justify-center overflow-hidden pt-20 bg-transparent"
     >
-      {/* Oven glow */}
-      <div className="absolute inset-0 pointer-events-none">
-        <div
-          className="absolute bottom-0 left-1/2 -translate-x-1/2 w-[600px] h-[300px] rounded-full animate-glow-pulse"
-          style={{
-            background:
-              "radial-gradient(ellipse, hsl(30 80% 55% / 0.15) 0%, transparent 70%)",
-          }}
-        />
-      </div>
-
-      {/* Floating ingredients */}
-      {floatingIngredients.map((item, i) => (
-        <span
-          key={i}
-          className={`absolute ${item.className} pointer-events-none select-none opacity-60`}
-          style={{ animationDelay: item.delay }}
-        >
-          {item.emoji}
-        </span>
-      ))}
-
       {/* Flour particles */}
       {[...Array(8)].map((_, i) => (
         <div
@@ -97,24 +66,9 @@ const Hero = () => {
               className="w-[320px] md:w-[450px] lg:w-[500px] animate-pizza-spin drop-shadow-2xl transition-transform duration-500 group-hover:scale-110"
               style={{ animationDuration: "20s" }}
             />
-            {/* Hover toppings pop */}
-            <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none">
-              <span className="absolute top-[20%] left-[25%] text-3xl animate-float" style={{ animationDelay: "0s" }}>🍅</span>
-              <span className="absolute top-[15%] right-[25%] text-3xl animate-float-reverse" style={{ animationDelay: "0.3s" }}>🌿</span>
-              <span className="absolute bottom-[25%] left-[20%] text-2xl animate-float" style={{ animationDelay: "0.6s" }}>🧀</span>
-              <span className="absolute bottom-[20%] right-[20%] text-2xl animate-float-reverse" style={{ animationDelay: "0.9s" }}>🫒</span>
-            </div>
-            {/* Glow ring */}
-            <div className="absolute inset-0 rounded-full border-4 border-secondary/20 animate-glow-pulse pointer-events-none" />
           </div>
         </div>
       </div>
-
-      {/* Scroll indicator */}
-      {/* <div className="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 text-muted-foreground animate-float">
-        <span className="text-sm font-body">Scroll Down</span>
-        <span className="text-xl">↓</span>
-      </div> */}
     </section>
   );
 };

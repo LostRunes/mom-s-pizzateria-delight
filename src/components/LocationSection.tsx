@@ -24,7 +24,7 @@ const LocationSection = () => {
       {/* Scooter animation */}
       <div className="absolute bottom-4 left-0 w-full pointer-events-none z-10">
         <span className="animate-scooter inline-block text-4xl" style={{ animationDuration: "12s" }}>
-          ��🛵
+          💨🛵
         </span>
       </div>
 
