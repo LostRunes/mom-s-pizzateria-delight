@@ -7,7 +7,7 @@ interface MenuItem {
 
 interface MenuSection {
   title: string;
-  emoji: string;
+  image: string;
   subtitle?: string;
   items: MenuItem[];
   note?: string;
@@ -16,7 +16,7 @@ interface MenuSection {
 const menuData: MenuSection[] = [
   {
     title: "Veg Pizza",
-    emoji: "🍕",
+    image: "/images/categories/veg-pizza.png",
     subtitle: '7" Personal | 10" Medium',
     items: [
       { name: "Classic Margherita Pizza", prices: "₹219 | ₹419" },
@@ -35,7 +35,7 @@ const menuData: MenuSection[] = [
   },
   {
     title: "Non-Veg Pizza",
-    emoji: "🍖",
+    image: "/images/categories/non-veg-pizza.png",
     subtitle: '7" Personal | 10" Medium',
     items: [
       { name: "Chicken Tikka & Onion Pizza", prices: "₹239 | ₹499" },
@@ -51,7 +51,7 @@ const menuData: MenuSection[] = [
   },
   {
     title: "Choice of Crust",
-    emoji: "🫓",
+    image: "/images/categories/crust.png",
     subtitle: "Extra",
     items: [
       { name: "Hand Made Regular Crust", prices: "Free" },
@@ -62,7 +62,7 @@ const menuData: MenuSection[] = [
   },
   {
     title: "Toast Garlic Bread",
-    emoji: "🥖",
+    image: "/images/categories/garlic-bread.png",
     subtitle: "4 pcs",
     items: [
       { name: "Butter Garlic Bread", prices: "₹119" },
@@ -73,7 +73,7 @@ const menuData: MenuSection[] = [
   },
   {
     title: "Fried Chicken",
-    emoji: "🍗",
+    image: "/images/categories/fried-chicken.png",
     items: [
       { name: "Chicken Popcorn (10 pcs)", prices: "₹148" },
       { name: "Chicken Popcorn (15 pcs)", prices: "₹219" },
@@ -83,7 +83,7 @@ const menuData: MenuSection[] = [
   },
   {
     title: "Non-Veg Burgers",
-    emoji: "🍔",
+    image: "/images/categories/burgers.png",
     items: [
       { name: "Crispy Chicken Zinger Burger", prices: "₹148" },
       { name: "Chicken Single Patty Burger", prices: "₹148" },
@@ -94,7 +94,7 @@ const menuData: MenuSection[] = [
   },
   {
     title: "Veg Burgers",
-    emoji: "🥬",
+    image: "/images/categories/burgers.png",
     items: [
       { name: "Crispy Veg Single Patty Burger", prices: "₹139" },
       { name: "Crispy Veg Double Patty Burger", prices: "₹249" },
@@ -103,7 +103,7 @@ const menuData: MenuSection[] = [
   },
   {
     title: "Non-Veg Grilled Sandwich",
-    emoji: "🥪",
+    image: "/images/categories/sandwiches.png",
     subtitle: "with cheese / without cheese",
     items: [
       { name: "Crispy Chicken Sandwich", prices: "₹148 / ₹129" },
@@ -115,7 +115,7 @@ const menuData: MenuSection[] = [
   },
   {
     title: "Veg Grilled Sandwich",
-    emoji: "🥗",
+    image: "/images/categories/sandwiches.png",
     subtitle: "with cheese / without cheese",
     items: [
       { name: "Mashed Potato Mayo Sandwich", prices: "₹148 / ₹129" },
@@ -125,7 +125,7 @@ const menuData: MenuSection[] = [
   },
   {
     title: "Veg Maggi",
-    emoji: "🍜",
+    image: "/images/categories/maggi.png",
     items: [
       { name: "Veg Masala Fried Maggi", prices: "₹129" },
       { name: "Mushroom Masala Maggi", prices: "₹148" },
@@ -133,7 +133,7 @@ const menuData: MenuSection[] = [
   },
   {
     title: "Non-Veg Maggi",
-    emoji: "🍜",
+    image: "/images/categories/maggi.png",
     items: [
       { name: "Egg Masala Fried Maggi", prices: "₹148" },
       { name: "Chicken Masala Fried Maggi", prices: "₹148" },
@@ -143,12 +143,12 @@ const menuData: MenuSection[] = [
   },
   {
     title: "Desserts",
-    emoji: "🍫",
+    image: "/images/categories/desserts.png",
     items: [{ name: "Hazelnut Brownie", prices: "₹129" }],
   },
   {
     title: "Beverages",
-    emoji: "🥤",
+    image: "/images/categories/beverages.png",
     items: [
       { name: "Any PET Bottle 250ml", prices: "₹40" },
       { name: "Mineral Water 500ml", prices: "₹40" },
@@ -187,7 +187,7 @@ const FullMenu = () => {
   }, [activeFilter]);
 
   return (
-    <section id="menu" className="py-20 bg-background" ref={sectionRef}>
+    <section id="specials" className="py-20 bg-transparent" ref={sectionRef}>
       <div className="container mx-auto px-4">
         <div className="text-center mb-10 reveal">
           <h2 className="text-4xl md:text-5xl font-bold text-foreground mb-4">
@@ -202,11 +202,10 @@ const FullMenu = () => {
             <button
               key={f}
               onClick={() => setActiveFilter(f)}
-              className={`px-5 py-2 rounded-full font-heading font-medium text-sm transition-all duration-300 ${
-                activeFilter === f
-                  ? "bg-primary text-primary-foreground shadow-lg shadow-primary/20"
-                  : "bg-card text-muted-foreground hover:bg-primary/10 hover:text-primary border border-border"
-              }`}
+              className={`px-5 py-2 rounded-full font-heading font-medium text-sm transition-all duration-300 ${activeFilter === f
+                ? "bg-primary text-primary-foreground shadow-lg shadow-primary/20"
+                : "bg-card text-muted-foreground hover:bg-primary/10 hover:text-primary border border-border"
+                }`}
             >
               {f}
             </button>
@@ -218,13 +217,19 @@ const FullMenu = () => {
           {filteredData.map((section, si) => (
             <div
               key={section.title}
-              className="reveal bg-card rounded-2xl border border-border/50 overflow-hidden shadow-sm hover:shadow-md transition-shadow duration-300"
+              className="reveal bg-card/40 backdrop-blur-sm rounded-2xl border border-border/50 overflow-hidden shadow-sm hover:shadow-md transition-shadow duration-300"
               style={{ transitionDelay: `${si * 60}ms` }}
             >
               {/* Section header */}
               <div className="bg-gradient-to-r from-primary/5 to-secondary/5 px-6 py-4 border-b border-border/30">
-                <div className="flex items-center gap-3">
-                  <span className="text-3xl">{section.emoji}</span>
+                <div className="flex items-center gap-4">
+                  <div className="w-12 h-12 flex-shrink-0">
+                    <img
+                      src={section.image}
+                      alt={section.title}
+                      className="w-full h-full object-contain drop-shadow-md"
+                    />
+                  </div>
                   <div>
                     <h3 className="font-heading font-bold text-foreground text-xl">
                       {section.title}

@@ -42,7 +42,7 @@ const LocationSection = () => {
         <div className="max-w-4xl mx-auto reveal">
           <div className="rounded-2xl overflow-hidden shadow-lg border border-border/50">
             <iframe
-              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3000!2d0!3d0!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMzDCsDA0JzUwLjciTiA3NsKwMjAnMDguNyJX!5e0!3m2!1sen!2sin!4v1234567890"
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d15551.487532353155!2d77.60830789781806!3d12.971598681729377!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bae16709848e42f%3A0xc3f8f907e868c2d6!2sMom&#39;s%20Pizzeria!5e0!3m2!1sen!2sin!4v1710016625890"
               width="100%"
               height="400"
               style={{ border: 0 }}

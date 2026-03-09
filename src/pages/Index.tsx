@@ -5,10 +5,12 @@ import FullMenu from "@/components/FullMenu";
 import LocationSection from "@/components/LocationSection";
 import ContactSection from "@/components/ContactSection";
 import Footer from "@/components/Footer";
+import InteractiveBackground from "@/components/InteractiveBackground";
 
 const Index = () => {
   return (
-    <div className="min-h-screen bg-background">
+    <div className="min-h-screen bg-transparent relative">
+      <InteractiveBackground />
       <Navbar />
       <Hero />
       <MenuCategories />

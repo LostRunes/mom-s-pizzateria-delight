@@ -16,11 +16,7 @@ const Hero = () => {
   return (
     <section
       id="home"
-      className="relative min-h-screen flex items-center justify-center overflow-hidden pt-20"
-      style={{
-        background:
-          "radial-gradient(ellipse at center bottom, hsl(8 75% 52% / 0.08) 0%, hsl(42 90% 62% / 0.05) 40%, hsl(35 60% 97%) 70%)",
-      }}
+      className="relative min-h-screen flex items-center justify-center overflow-hidden pt-20 bg-transparent"
     >
       {/* Oven glow */}
       <div className="absolute inset-0 pointer-events-none">
@@ -115,10 +111,10 @@ const Hero = () => {
       </div>
 
       {/* Scroll indicator */}
-      <div className="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 text-muted-foreground animate-float">
+      {/* <div className="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 text-muted-foreground animate-float">
         <span className="text-sm font-body">Scroll Down</span>
         <span className="text-xl">↓</span>
-      </div>
+      </div> */}
     </section>
   );
 };

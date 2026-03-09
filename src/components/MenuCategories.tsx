@@ -1,15 +1,21 @@
 import { useEffect, useRef } from "react";
 
-const categories = [
-  { name: "Veg Pizza", emoji: "🍕", color: "from-primary/10 to-secondary/10" },
-  { name: "Non-Veg Pizza", emoji: "🍖", color: "from-primary/15 to-primary/5" },
-  { name: "Burgers", emoji: "🍔", color: "from-secondary/15 to-secondary/5" },
-  { name: "Sandwiches", emoji: "🥪", color: "from-accent/10 to-accent/5" },
-  { name: "Fried Chicken", emoji: "🍗", color: "from-primary/10 to-secondary/10" },
-  { name: "Maggi", emoji: "🍜", color: "from-secondary/15 to-primary/5" },
-  { name: "Garlic Bread", emoji: "🥖", color: "from-secondary/10 to-secondary/5" },
-  { name: "Desserts", emoji: "🍫", color: "from-crust/10 to-secondary/10" },
-  { name: "Beverages", emoji: "🥤", color: "from-accent/10 to-accent/5" },
+interface Category {
+  name: string;
+  image: string;
+  color: string;
+}
+
+const categories: Category[] = [
+  { name: "Veg Pizza", image: "/images/categories/veg-pizza.png", color: "from-primary/10 to-secondary/10" },
+  { name: "Non-Veg Pizza", image: "/images/categories/non-veg-pizza.png", color: "from-primary/15 to-primary/5" },
+  { name: "Burgers", image: "/images/categories/burgers.png", color: "from-secondary/15 to-secondary/5" },
+  { name: "Sandwiches", image: "/images/categories/sandwiches.png", color: "from-accent/10 to-accent/5" },
+  { name: "Fried Chicken", image: "/images/categories/fried-chicken.png", color: "from-primary/10 to-secondary/10" },
+  { name: "Maggi", image: "/images/categories/maggi.png", color: "from-secondary/15 to-primary/5" },
+  { name: "Garlic Bread", image: "/images/categories/garlic-bread.png", color: "from-secondary/10 to-secondary/5" },
+  { name: "Desserts", image: "/images/categories/desserts.png", color: "from-crust/10 to-secondary/10" },
+  { name: "Beverages", image: "/images/categories/beverages.png", color: "from-accent/10 to-accent/5" },
 ];
 
 const MenuCategories = () => {
@@ -34,7 +40,7 @@ const MenuCategories = () => {
   }, []);
 
   return (
-    <section id="specials" className="py-20 bg-card" ref={sectionRef}>
+    <section id="specials" className="py-20 bg-transparent" ref={sectionRef}>
       <div className="container mx-auto px-4">
         <div className="text-center mb-12 reveal">
           <h2 className="text-4xl md:text-5xl font-bold text-foreground mb-4">
@@ -53,9 +59,13 @@ const MenuCategories = () => {
               className={`reveal group relative bg-gradient-to-br ${cat.color} rounded-2xl p-6 md:p-8 text-center cursor-pointer transition-all duration-500 hover:scale-105 hover:shadow-xl hover:shadow-primary/10 border border-border/50`}
               style={{ transitionDelay: `${i * 80}ms` }}
             >
-              <span className="text-5xl md:text-6xl block mb-3 transition-transform duration-500 group-hover:scale-125 group-hover:-translate-y-2">
-                {cat.emoji}
-              </span>
+              <div className="w-20 h-20 md:w-24 md:h-24 mx-auto mb-4 transition-transform duration-500 group-hover:scale-110 group-hover:-translate-y-2">
+                <img
+                  src={cat.image}
+                  alt={cat.name}
+                  className="w-full h-full object-contain drop-shadow-lg"
+                />
+              </div>
               <h3 className="font-heading font-semibold text-foreground text-sm md:text-base">
                 {cat.name}
               </h3>
