@@ -147,11 +147,11 @@
 
 @keyframes scooter-drive {
   0% {
-    transform: translateX(-100px);
+    transform: translateX(calc(100vw + 100px)) scaleX(-1);
   }
 
   100% {
-    transform: translateX(calc(100vw + 100px));
+    transform: translateX(-100px) scaleX(-1);
   }
 }
 
