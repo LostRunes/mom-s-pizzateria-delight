@@ -60,10 +60,16 @@ const Hero = () => {
           </div>
 
           <div className="relative group cursor-pointer">
+            {/* Rotating Glow Circle */}
+            <div className="absolute inset-0 rounded-full bg-gradient-to-tr from-primary/20 via-cheese/20 to-tomato/20 blur-3xl animate-pizza-spin opacity-0 group-hover:opacity-100 transition-opacity duration-700"
+              style={{ animationDuration: "15s" }} />
+            <div className="absolute -inset-4 rounded-full border-2 border-dashed border-primary/30 animate-pizza-spin"
+              style={{ animationDuration: "30s" }} />
+
             <img
               src={heroPizza}
               alt="Delicious pizza from Mom's Pizzateria"
-              className="w-[320px] md:w-[450px] lg:w-[500px] animate-pizza-spin drop-shadow-2xl transition-transform duration-500 group-hover:scale-110"
+              className="w-[320px] md:w-[450px] lg:w-[500px] animate-pizza-spin drop-shadow-2xl transition-transform duration-500 group-hover:scale-110 relative z-10"
               style={{ animationDuration: "20s" }}
             />
           </div>
