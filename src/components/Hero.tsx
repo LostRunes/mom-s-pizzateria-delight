@@ -60,11 +60,17 @@ const Hero = () => {
           </div>
 
           <div className="relative group cursor-pointer">
-            {/* Rotating Glow Circle */}
-            <div className="absolute inset-0 rounded-full bg-gradient-to-tr from-primary/20 via-cheese/20 to-tomato/20 blur-3xl animate-pizza-spin opacity-0 group-hover:opacity-100 transition-opacity duration-700"
-              style={{ animationDuration: "15s" }} />
-            <div className="absolute -inset-4 rounded-full border-2 border-dashed border-primary/30 animate-pizza-spin"
-              style={{ animationDuration: "30s" }} />
+            {/* Professional Glowing Rings */}
+            <div className="absolute -inset-12 rounded-full bg-primary/10 blur-[80px] animate-pulse pointer-events-none" />
+            <div className="absolute -inset-8 rounded-full bg-secondary/5 blur-[100px] animate-pulse pointer-events-none" style={{ animationDelay: "1s" }} />
+
+            <div className="absolute -inset-6 rounded-full border border-primary/40 blur-sm animate-pizza-spin pointer-events-none"
+              style={{ animationDuration: "25s" }} />
+
+            <div className="absolute -inset-4 rounded-full border-2 border-primary shadow-[0_0_40px_rgba(245,94,71,0.8),inset_0_0_20px_rgba(245,94,71,0.4)] animate-pizza-spin-reverse pointer-events-none"
+              style={{ animationDuration: "20s" }} />
+
+            <div className="absolute inset-0 rounded-full bg-gradient-to-tr from-primary/10 via-transparent to-cheese/10 blur-2xl animate-pulse pointer-events-none" />
 
             <img
               src={heroPizza}

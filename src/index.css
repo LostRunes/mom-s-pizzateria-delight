@@ -87,6 +87,16 @@
   }
 }
 
+@keyframes pizza-spin-reverse {
+  from {
+    transform: rotate(360deg);
+  }
+
+  to {
+    transform: rotate(0deg);
+  }
+}
+
 @keyframes float {
 
   0%,
@@ -197,6 +207,10 @@
 
 .animate-pizza-spin {
   animation: pizza-spin 20s linear infinite;
+}
+
+.animate-pizza-spin-reverse {
+  animation: pizza-spin-reverse 20s linear infinite;
 }
 
 .animate-float {
