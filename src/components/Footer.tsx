@@ -12,7 +12,7 @@ const Footer = () => {
 
           <div className="flex justify-center gap-8 mb-8">
             {[
-              { label: "Menu", href: "#menu" },
+              { label: "Menu", href: "#menu-categories" },
               { label: "Location", href: "#location" },
               { label: "Contact", href: "#contact" },
             ].map((link) => (
@@ -27,10 +27,10 @@ const Footer = () => {
           </div>
 
           <p className="text-primary-foreground/40 font-body text-sm mb-2">
-            📞 07381459162
+            📞 +91 73814 59162
           </p>
           <p className="text-primary-foreground/30 font-body text-xs">
-            © {new Date().getFullYear()} Mom's Pizzateria. Made with ❤️
+            © 2026 KIITO. Made with ❤️
           </p>
         </div>
       </div>

@@ -4,13 +4,17 @@ import { Menu, X } from "lucide-react";
 
 const navItems = [
   { label: "Home", href: "#home" },
-  { label: "Menu", href: "#menu" },
-  { label: "Specials", href: "#specials" },
+  { label: "Menu", href: "#menu-categories" },
+  { label: "Specials", href: "#full-menu" },
   { label: "Location", href: "#location" },
   { label: "Contact", href: "#contact" },
 ];
 
-const Navbar = () => {
+interface NavbarProps {
+  onOrderClick: () => void;
+}
+
+const Navbar = ({ onOrderClick }: NavbarProps) => {
   const [scrolled, setScrolled] = useState(false);
   const [mobileOpen, setMobileOpen] = useState(false);
 
@@ -42,7 +46,7 @@ const Navbar = () => {
               {item.label}
             </a>
           ))}
-          <Button variant="hero" size="default">
+          <Button variant="hero" size="default" onClick={onOrderClick}>
             Order Now
           </Button>
         </div>
@@ -70,7 +74,7 @@ const Navbar = () => {
                 {item.label}
               </a>
             ))}
-            <Button variant="hero" size="lg">
+            <Button variant="hero" size="lg" onClick={() => { setMobileOpen(false); onOrderClick(); }}>
               Order Now
             </Button>
           </div>

@@ -1,9 +1,11 @@
 import { Button } from "@/components/ui/button";
 import heroPizza from "@/assets/hero-pizza.png";
 
-const steamLines = [0, 1, 2, 3, 4];
+interface HeroProps {
+  onOrderClick: () => void;
+}
 
-const Hero = () => {
+const Hero = ({ onOrderClick }: HeroProps) => {
   return (
     <section
       id="home"
@@ -30,14 +32,23 @@ const Hero = () => {
             Hot, Fresh &<br />
             <span className="text-primary">Made With Love</span>
           </h1>
-          <p className="text-lg md:text-xl text-muted-foreground max-w-lg mb-8 mx-auto lg:mx-0">
+          <p className="text-lg md:text-xl text-muted-foreground max-w-lg mb-4 mx-auto lg:mx-0">
             Welcome to Mom's Pizzateria — where every slice feels like home.
           </p>
+          <div className="bg-primary/10 border border-primary/20 text-primary px-4 py-2 rounded-full inline-flex items-center gap-2 mb-8 mx-auto lg:mx-0 font-heading font-medium">
+            <span className="relative flex h-3 w-3">
+              <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-primary opacity-75"></span>
+              <span className="relative inline-flex rounded-full h-3 w-3 bg-primary"></span>
+            </span>
+            Currently only delivering in CAMPUS 25
+          </div>
           <div className="flex flex-wrap gap-4 justify-center lg:justify-start">
-            <Button variant="hero" size="xl">
-              🍕 View Menu
-            </Button>
-            <Button variant="heroOutline" size="xl">
+            <a href="#menu-categories">
+              <Button variant="hero" size="xl">
+                🍕 View Menu
+              </Button>
+            </a>
+            <Button variant="heroOutline" size="xl" onClick={onOrderClick}>
               🛒 Order Now
             </Button>
           </div>
@@ -45,20 +56,6 @@ const Hero = () => {
 
         {/* Pizza */}
         <div className="flex-1 flex justify-center relative">
-          {/* Steam */}
-          <div className="absolute -top-8 left-1/2 -translate-x-1/2 flex gap-4">
-            {steamLines.map((i) => (
-              <div
-                key={i}
-                className="w-1 h-8 bg-muted-foreground/10 rounded-full animate-steam"
-                style={{
-                  animationDelay: `${i * 0.6}s`,
-                  animationDuration: `${2 + i * 0.3}s`,
-                }}
-              />
-            ))}
-          </div>
-
           <div className="relative group cursor-pointer">
             {/* Professional Glowing Rings */}
             <div className="absolute -inset-12 rounded-full bg-primary/10 blur-[80px] animate-pulse pointer-events-none" />

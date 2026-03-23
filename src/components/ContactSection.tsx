@@ -35,9 +35,9 @@ const ContactSection = () => {
               <Phone className="text-primary" size={32} />
             </div>
             <p className="text-3xl font-heading font-bold text-foreground mb-6">
-              📞 07381459162
+              📞 +91 73814 59162
             </p>
-            <a href="tel:07381459162">
+            <a href="tel:+917381459162">
               <Button variant="hero" size="xl" className="w-full max-w-xs">
                 <Phone size={18} />
                 Call Now

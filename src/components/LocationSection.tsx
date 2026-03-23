@@ -21,12 +21,6 @@ const LocationSection = () => {
 
   return (
     <section id="location" className="py-20 bg-card relative overflow-hidden" ref={sectionRef}>
-      {/* Scooter animation */}
-      <div className="absolute bottom-4 left-0 w-full pointer-events-none z-10">
-        <span className="animate-scooter inline-block text-4xl" style={{ animationDuration: "12s" }}>
-          💨🛵
-        </span>
-      </div>
 
       <div className="container mx-auto px-4">
         <div className="text-center mb-10 reveal">
@@ -35,14 +29,14 @@ const LocationSection = () => {
           </h2>
           <p className="text-muted-foreground text-lg flex items-center justify-center gap-2">
             <MapPin className="text-primary" size={20} />
-            Come visit us for a warm, cheesy welcome!
+            Delivering hot and fresh directly to your doorstep!
           </p>
         </div>
 
         <div className="max-w-4xl mx-auto reveal">
           <div className="rounded-2xl overflow-hidden shadow-lg border border-border/50">
             <iframe
-              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d15551.487532353155!2d77.60830789781806!3d12.971598681729377!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bae16709848e42f%3A0xc3f8f907e868c2d6!2sMom&#39;s%20Pizzeria!5e0!3m2!1sen!2sin!4v1710016625890"
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3744.539673803299!2d85.813998!3d20.363205!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMjDCsDIxJzQ3LjUiTiA4NcKwNDgnNTguMyJF!5e0!3m2!1sen!2sin!4v1710016625890"
               width="100%"
               height="400"
               style={{ border: 0 }}
@@ -55,7 +49,7 @@ const LocationSection = () => {
 
           <div className="text-center mt-8">
             <a
-              href="https://maps.app.goo.gl/zHadvQ5qdsTjnvCA8"
+              href="https://www.google.com/maps/place/20%C2%B021'47.5%22N+85%C2%B048'58.3%22E/@20.363205,85.816187,17z"
               target="_blank"
               rel="noopener noreferrer"
             >

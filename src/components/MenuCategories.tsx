@@ -1,21 +1,23 @@
 import { useEffect, useRef } from "react";
+import { slugify } from "./FullMenu";
 
 interface Category {
   name: string;
   image: string;
   color: string;
+  menuSlug: string;
 }
 
 const categories: Category[] = [
-  { name: "Veg Pizza", image: "/images/categories/veg-pizza.png", color: "from-primary/10 to-secondary/10" },
-  { name: "Non-Veg Pizza", image: "/images/categories/non-veg-pizza.png", color: "from-primary/15 to-primary/5" },
-  { name: "Burgers", image: "/images/categories/burgers.png", color: "from-secondary/15 to-secondary/5" },
-  { name: "Sandwiches", image: "/images/categories/sandwiches.png", color: "from-accent/10 to-accent/5" },
-  { name: "Fried Chicken", image: "/images/categories/fried-chicken.png", color: "from-primary/10 to-secondary/10" },
-  { name: "Maggi", image: "/images/categories/maggi.png", color: "from-secondary/15 to-primary/5" },
-  { name: "Garlic Bread", image: "/images/categories/garlic-bread.png", color: "from-secondary/10 to-secondary/5" },
-  { name: "Desserts", image: "/images/categories/desserts.png", color: "from-crust/10 to-secondary/10" },
-  { name: "Beverages", image: "/images/categories/beverages.png", color: "from-accent/10 to-accent/5" },
+  { name: "Veg Pizza", image: "/images/categories/veg-pizza.png", color: "from-primary/10 to-secondary/10", menuSlug: "veg-pizza" },
+  { name: "Non-Veg Pizza", image: "/images/categories/non-veg-pizza.png", color: "from-primary/15 to-primary/5", menuSlug: "non-veg-pizza" },
+  { name: "Burgers", image: "/images/categories/burgers.png", color: "from-secondary/15 to-secondary/5", menuSlug: "non-veg-burgers" },
+  { name: "Sandwiches", image: "/images/categories/sandwiches.png", color: "from-accent/10 to-accent/5", menuSlug: "non-veg-grilled-sandwich" },
+  { name: "Fried Chicken", image: "/images/categories/fried-chicken.png", color: "from-primary/10 to-secondary/10", menuSlug: "fried-chicken" },
+  { name: "Maggi", image: "/images/categories/maggi.png", color: "from-secondary/15 to-primary/5", menuSlug: "veg-maggi" },
+  { name: "Garlic Bread", image: "/images/categories/garlic-bread.png", color: "from-secondary/10 to-secondary/5", menuSlug: "toast-garlic-bread" },
+  { name: "Desserts", image: "/images/categories/desserts.png", color: "from-crust/10 to-secondary/10", menuSlug: "desserts" },
+  { name: "Beverages", image: "/images/categories/beverages.png", color: "from-accent/10 to-accent/5", menuSlug: "beverages" },
 ];
 
 const MenuCategories = () => {
@@ -40,11 +42,11 @@ const MenuCategories = () => {
   }, []);
 
   return (
-    <section id="specials" className="py-20 bg-transparent" ref={sectionRef}>
+    <section id="menu-categories" className="py-20 bg-transparent" ref={sectionRef}>
       <div className="container mx-auto px-4">
         <div className="text-center mb-12 reveal">
           <h2 className="text-4xl md:text-5xl font-bold text-foreground mb-4">
-            Our Signature <span className="text-primary">Menu</span>
+            Browse <span className="text-primary">Categories</span>
           </h2>
           <p className="text-muted-foreground text-lg max-w-md mx-auto">
             Handcrafted with love, served with a smile
@@ -55,7 +57,7 @@ const MenuCategories = () => {
           {categories.map((cat, i) => (
             <a
               key={cat.name}
-              href="#menu"
+              href={`#${cat.menuSlug}`}
               className={`reveal group relative bg-gradient-to-br ${cat.color} rounded-2xl p-6 md:p-8 text-center cursor-pointer transition-all duration-500 hover:scale-105 hover:shadow-xl hover:shadow-primary/10 border border-border/50`}
               style={{ transitionDelay: `${i * 80}ms` }}
             >
