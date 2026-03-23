@@ -149,7 +149,7 @@ const menuData: MenuSection[] = [
   {
     title: "Desserts",
     image: "/images/categories/desserts.png",
-    items: [{ name: "Hazelnut Brownie", prices: "₹90" }],
+    items: [{ name: "Hazelnut Brownie", prices: "₹70" }],
   },
   {
     title: "Beverages",
