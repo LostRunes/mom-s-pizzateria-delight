@@ -18,6 +18,26 @@ function slugify(title: string): string {
   return title.toLowerCase().replace(/[^a-z0-9]+/g, "-").replace(/(^-|-$)/g, "");
 }
 
+// Helper: double every ₹ price in a price string
+function doublePrice(priceStr: string): string {
+  return priceStr.replace(/₹(\d+)/g, (_, num) => `₹${parseInt(num) * 2}`);
+}
+
+// Renders current price below a crossed-out doubled "original" price
+function PriceDisplay({ prices }: { prices: string }) {
+  const isFree = prices.toLowerCase() === "free";
+  if (isFree) {
+    return <span className="font-heading font-semibold text-green-500 whitespace-nowrap ml-4">Free</span>;
+  }
+  const original = doublePrice(prices);
+  return (
+    <span className="flex flex-col items-end ml-4 gap-0 min-w-max">
+      <span className="text-xs text-muted-foreground/70 line-through leading-tight">{original}</span>
+      <span className="font-heading font-semibold text-primary whitespace-nowrap leading-tight">{prices}</span>
+    </span>
+  );
+}
+
 const menuData: MenuSection[] = [
   {
     title: "Veg Pizza",
@@ -294,12 +314,10 @@ const FullMenu = () => {
                     key={item.name}
                     className="px-6 py-3 flex items-center justify-between group hover:bg-primary/[0.02] transition-colors duration-200"
                   >
-                    <span className="font-body text-foreground group-hover:text-primary transition-colors duration-200">
+                    <span className="font-body text-foreground group-hover:text-primary transition-colors duration-200 pr-2">
                       {item.name}
                     </span>
-                    <span className="font-heading font-semibold text-primary whitespace-nowrap ml-4">
-                      {item.prices}
-                    </span>
+                    <PriceDisplay prices={item.prices} />
                   </div>
                 ))}
               </div>

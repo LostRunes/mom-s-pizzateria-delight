@@ -26,13 +26,18 @@ const Navbar = ({ onOrderClick }: NavbarProps) => {
 
   return (
     <nav
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
-        scrolled ? "navbar-scrolled shadow-lg py-2" : "bg-transparent py-4"
+      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 border-b border-white/5 ${
+        scrolled
+          ? "bg-black/60 backdrop-blur-lg shadow-2xl py-2"
+          : "bg-black/20 backdrop-blur-md py-4"
       }`}
     >
       <div className="container mx-auto flex items-center justify-between px-4">
-        <a href="#home" className="font-heading text-2xl font-bold text-primary">
-          Mom's Pizzateria 🍕
+        <a href="#home" className="font-heading text-2xl font-bold flex items-center gap-2">
+          <span className="bg-gradient-to-r from-primary to-amber-500 bg-clip-text text-transparent">
+            Mom's Pizzateria
+          </span>
+          <span className="text-secondary text-2xl">🍕</span>
         </a>
 
         {/* Desktop nav */}
