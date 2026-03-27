@@ -15,6 +15,7 @@ const Index = () => {
   const [orderModalOpen, setOrderModalOpen] = useState(false);
   const [showFloatingBtn, setShowFloatingBtn] = useState(false);
   const [showOrderPopup, setShowOrderPopup] = useState(false);
+  const [selectedItem, setSelectedItem] = useState<{name: string, prices: string} | null>(null);
 
   const openOrderModal = () => setOrderModalOpen(true);
   const closeOrderModal = () => setOrderModalOpen(false);
@@ -41,11 +42,11 @@ const Index = () => {
           speed={1}
         />
       </div>
-      <Navbar onOrderClick={() => setShowOrderPopup(true)} />
-      <Hero onOrderClick={() => setShowOrderPopup(true)} />
+      <Navbar onOrderClick={() => { setSelectedItem(null); setShowOrderPopup(true); }} />
+      <Hero onOrderClick={() => { setSelectedItem(null); setShowOrderPopup(true); }} />
       <MenuCategories />
       <ScrollingReviews />
-      <FullMenu />
+      <FullMenu onItemClick={(item) => { setSelectedItem(item); setShowOrderPopup(true); }} />
       <LocationSection />
       <ContactSection />
       <Footer />
@@ -54,7 +55,7 @@ const Index = () => {
       {/* Floating Order Button */}
       {showFloatingBtn && (
         <button
-          onClick={() => setShowOrderPopup(true)}
+          onClick={() => { setSelectedItem(null); setShowOrderPopup(true); }}
           className="fixed bottom-6 right-4 z-50 flex items-center gap-2 bg-gradient-to-r from-green-400 to-green-700 text-black font-heading font-bold px-5 py-3.5 rounded-full shadow-2xl shadow-black/30 hover:scale-110 active:scale-95 transition-all duration-200 text-sm"
         >
           <Pizza size={20} className="text-black" strokeWidth={2.5} /> Order Now
@@ -95,12 +96,21 @@ const Index = () => {
                 </div>
               </div>
 
-              {/* Title */}
+              {/* Title & Price Information */}
               <div>
-                <h3 className="font-heading font-bold text-white text-2xl leading-tight mb-1">
-                  Ready to Order?
+                <h3 className="font-heading font-bold text-white text-2xl leading-tight mb-2">
+                  {selectedItem ? `Order ${selectedItem.name}` : "Ready to Order?"}
                 </h3>
-                <p className="text-white/50 text-xs tracking-wide">Fresh & hot to your doorstep</p>
+                {selectedItem ? (
+                  <div className="flex flex-col items-center gap-2">
+                    <p className="text-white/50 text-[11px] uppercase tracking-wider font-medium">Available at 50% off for only</p>
+                    <div className="px-5 py-2 rounded-full bg-gradient-to-r from-green-400 to-green-700 text-black font-heading font-black text-xl shadow-xl shadow-black/30 transform hover:scale-105 transition-all">
+                      {selectedItem.prices}
+                    </div>
+                  </div>
+                ) : (
+                  <p className="text-white/50 text-xs tracking-wide">Fresh & hot to your doorstep</p>
+                )}
               </div>
 
               {/* Divider */}
@@ -109,33 +119,36 @@ const Index = () => {
               {/* Call to action */}
               <div className="w-full bg-white/5 border border-white/10 rounded-2xl px-5 py-4">
                 <p className="text-white/60 text-xs mb-1 uppercase tracking-widest">To place your order</p>
-                <p className="text-white/80 text-sm mb-2">Give us a call at</p>
+                <p className="text-white/80 text-sm mb-3">Call us now at</p>
                 <a
-                  href="tel:+919876543210"
-                  className="inline-flex items-center gap-2 text-primary font-heading font-bold text-xl hover:brightness-110 transition-all"
+                  href="tel:+917381459162"
+                  className="inline-flex items-center gap-2 text-primary font-heading font-bold text-xl hover:brightness-110 transition-all mb-1"
                 >
-                  📞 +91 98765 43210
+                  📞 +91 73814 59162
                 </a>
               </div>
 
-              {/* Discount code */}
-              <div className="w-full bg-primary/10 border border-primary/30 rounded-2xl px-5 py-4">
-                <p className="text-white/60 text-xs mb-2 uppercase tracking-widest">Exclusive Discount</p>
-                <div className="flex items-center justify-center gap-3">
+              {/* Discount code & Instructions */}
+              <div className="w-full bg-primary/10 border border-primary/30 rounded-2xl px-5 py-4 space-y-3">
+                <div className="flex flex-col items-center">
+                  <p className="text-white/60 text-[10px] mb-1 uppercase tracking-widest leading-none">Use Discount Code</p>
                   <div
-                    className="px-4 py-1.5 rounded-xl font-heading font-black text-primary text-lg tracking-[0.2em] border border-primary/50"
-                    style={{ background: "rgba(245,94,71,0.08)", letterSpacing: "0.25em" }}
+                    className="px-4 py-1 rounded-xl font-heading font-black text-primary text-lg tracking-[0.2em] border border-primary/40 bg-primary/10"
+                    style={{ letterSpacing: "0.25em" }}
                   >
                     KIITO
                   </div>
                 </div>
-                <p className="text-white/50 text-xs mt-2">To avail at the given discounted price, say the code <span className="text-primary font-bold">KIITO</span> on call while placing order</p>
+                
+                <div className="pt-1 border-t border-primary/10">
+                  <p className="text-white/70 text-xs leading-relaxed">
+                    Say the code <span className="text-primary font-bold">KIITO</span> on call to avail 50% discount!
+                  </p>
+                  <p className="text-green-400 font-medium text-xs mt-1">
+                    FREE Delivery to Campus 25
+                  </p>
+                </div>
               </div>
-
-              {/* Bottom note */}
-              <p className="text-white/30 text-[10px] text-center leading-relaxed">
-                📍 Currently delivering in Campus 25 only
-              </p>
             </div>
 
             {/* Bottom accent */}

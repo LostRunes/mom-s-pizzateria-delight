@@ -33,7 +33,7 @@ const Hero = ({ onOrderClick }: HeroProps) => {
             <span className="text-primary">Made With Love</span>
           </h1>
           <p className="text-lg md:text-xl text-muted-foreground max-w-lg mb-8 mx-auto lg:mx-0">
-            Welcome to Mom's Pizzateria — where every slice feels like home.
+            Welcome to Mom's Pizzateria, where every slice feels like home.
           </p>
           <div className="flex flex-wrap gap-4 justify-center lg:justify-start">
             <a href="#menu-categories">
@@ -69,7 +69,7 @@ const Hero = ({ onOrderClick }: HeroProps) => {
         </h1>
 
         <p className="text-sm text-muted-foreground max-w-xs mb-8">
-          Welcome to Mom's Pizzateria — where every slice feels like home.
+          Welcome to Mom's Pizzateria, where every slice feels like home.
         </p>
 
 
@@ -100,12 +100,12 @@ const Hero = ({ onOrderClick }: HeroProps) => {
 
         {/* FREE Delivery */}
         <p className="text-sm font-heading font-semibold text-primary mb-1 tracking-wide">
-          🚀 FREE Delivery in Campus 25
+          FREE Delivery in Campus 25
         </p>
 
         {/* Discount line */}
         <p className="text-xs font-heading font-medium text-foreground/80 mb-5 tracking-wide">
-          🎉 Available at <span className="text-primary font-bold">50% Discount</span>
+          Available at <span className="text-primary font-bold">50% Discount</span>
         </p>
 
         {/* CTA buttons */}

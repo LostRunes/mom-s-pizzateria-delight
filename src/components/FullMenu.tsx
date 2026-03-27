@@ -183,7 +183,11 @@ const menuData: MenuSection[] = [
 
 export { menuData, slugify };
 
-const FullMenu = () => {
+interface FullMenuProps {
+  onItemClick?: (item: MenuItem) => void;
+}
+
+const FullMenu = ({ onItemClick }: FullMenuProps) => {
   const sectionRef = useRef<HTMLDivElement>(null);
   const [activeFilter, setActiveFilter] = useState("All");
   const [searchQuery, setSearchQuery] = useState("");
@@ -312,12 +316,23 @@ const FullMenu = () => {
                 {section.items.map((item) => (
                   <div
                     key={item.name}
-                    className="px-6 py-3 flex items-center justify-between group hover:bg-primary/[0.02] transition-colors duration-200"
+                    onClick={() => onItemClick?.(item)}
+                    className="px-6 py-4 flex items-center justify-between group hover:bg-primary/5 cursor-pointer transition-all duration-300 active:scale-[0.98]"
                   >
-                    <span className="font-body text-foreground group-hover:text-primary transition-colors duration-200 pr-2">
-                      {item.name}
-                    </span>
-                    <PriceDisplay prices={item.prices} />
+                    <div className="flex flex-col">
+                      <span className="font-body font-medium text-foreground group-hover:text-primary transition-colors duration-200">
+                        {item.name}
+                      </span>
+                      <span className="text-[10px] text-primary/60 font-medium uppercase tracking-wider opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                        Click to Order Now
+                      </span>
+                    </div>
+                    <div className="flex items-center gap-4">
+                      <PriceDisplay prices={item.prices} />
+                      <div className="w-8 h-8 rounded-full bg-primary/10 flex items-center justify-center text-primary group-hover:bg-primary group-hover:text-white transition-all duration-300">
+                        <span className="text-xl font-light">+</span>
+                      </div>
+                    </div>
                   </div>
                 ))}
               </div>
