@@ -9,7 +9,7 @@ const Hero = ({ onOrderClick }: HeroProps) => {
   return (
     <section
       id="home"
-      className="relative min-h-screen flex items-center justify-center overflow-hidden bg-transparent pt-12"
+      className="relative min-h-screen flex items-center justify-center overflow-hidden bg-transparent pt-8"
     >
       {/* Flour particles */}
       {[...Array(8)].map((_, i) => (
@@ -32,16 +32,9 @@ const Hero = ({ onOrderClick }: HeroProps) => {
             Hot, Fresh &<br />
             <span className="text-primary">Made With Love</span>
           </h1>
-          <p className="text-lg md:text-xl text-muted-foreground max-w-lg mb-4 mx-auto lg:mx-0">
+          <p className="text-lg md:text-xl text-muted-foreground max-w-lg mb-8 mx-auto lg:mx-0">
             Welcome to Mom's Pizzateria — where every slice feels like home.
           </p>
-          <div className="bg-primary/10 border border-primary/20 text-primary px-4 py-2 rounded-full inline-flex items-center gap-2 mb-8 mx-auto lg:mx-0 font-heading font-medium">
-            <span className="relative flex h-3 w-3">
-              <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-primary opacity-75"></span>
-              <span className="relative inline-flex rounded-full h-3 w-3 bg-primary"></span>
-            </span>
-            Currently only delivering in CAMPUS 25
-          </div>
           <div className="flex flex-wrap gap-4 justify-center lg:justify-start">
             <a href="#menu-categories">
               <Button variant="hero" size="xl">🍕 View Menu</Button>
@@ -67,7 +60,7 @@ const Hero = ({ onOrderClick }: HeroProps) => {
       </div>
 
       {/* ── Mobile layout ── */}
-      <div className="lg:hidden flex flex-col items-center text-center px-5 relative z-10 w-full animate-slide-up pt-8 pb-8">
+      <div className="lg:hidden flex flex-col items-center text-center px-5 relative z-10 w-full animate-slide-up pt-2 pb-8">
 
         {/* Heading */}
         <h1 className="text-4xl font-bold text-foreground leading-tight mb-4 text-shadow-warm">
@@ -75,19 +68,11 @@ const Hero = ({ onOrderClick }: HeroProps) => {
           <span className="text-primary">Made With Love</span>
         </h1>
 
-        {/* Sub-tagline */}
-        <p className="text-sm text-muted-foreground max-w-xs mb-5">
+        <p className="text-sm text-muted-foreground max-w-xs mb-8">
           Welcome to Mom's Pizzateria — where every slice feels like home.
         </p>
 
-        {/* Delivery badge */}
-        <div className="bg-primary/10 border border-primary/20 text-primary px-3 py-1.5 rounded-full inline-flex items-center gap-2 mb-6 font-heading font-medium text-xs">
-          <span className="relative flex h-2.5 w-2.5">
-            <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-primary opacity-75"></span>
-            <span className="relative inline-flex rounded-full h-2.5 w-2.5 bg-primary"></span>
-          </span>
-          Currently only delivering in CAMPUS 25
-        </div>
+
 
         {/* Pizza animation — large & centred */}
         <div className="relative flex justify-center mb-12">
