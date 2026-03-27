@@ -129,7 +129,7 @@ const Index = () => {
               </div>
 
               {/* Marketing & Instructions Premium UI */}
-              <div className="w-full relative overflow-hidden rounded-2xl border border-primary/40 bg-gradient-to-br from-black via-primary/10 to-black p-5 shadow-[0_0_30px_rgba(245,94,71,0.15)]">
+              <div className="w-full relative overflow-hidden rounded-2xl border border-primary/50 bg-gradient-to-br from-black via-primary/10 to-black p-5 shadow-[0_0_20px_rgba(245,94,71,0.4)] ring-1 ring-primary/20 transition-all duration-300">
                 {/* Decorative background glow */}
                 <div className="absolute -right-10 -top-10 h-32 w-32 rounded-full bg-primary/20 blur-3xl pointer-events-none"></div>
                 <div className="absolute -left-10 -bottom-10 h-32 w-32 rounded-full bg-yellow-500/10 blur-3xl pointer-events-none"></div>
@@ -148,9 +148,12 @@ const Index = () => {
                       than Swiggy & Zomato
                     </p>
                     
-                    <div className="mt-3 inline-flex items-center gap-1.5 bg-white/5 px-3 py-1.5 rounded-lg border border-white/10">
-                      <span className="text-white/60 text-[10px] uppercase tracking-wide">Compare only on</span>
-                      <span className="text-white font-bold text-xs bg-white/10 px-1.5 py-0.5 rounded shadow-sm">kiito app</span>
+                    <div className="mt-3 flex flex-col items-center gap-1.5">
+                      <span className="text-white/50 text-[9px] uppercase tracking-widest text-center">Compare and see for yourself</span>
+                      <div className="inline-flex items-center gap-2 bg-white/5 px-3 py-1.5 rounded-full border border-white/10">
+                        <span className="text-white/80 text-[11px] font-medium tracking-wide">Cheapest prices on</span>
+                        <span className="text-black font-black text-[11px] bg-primary px-2 py-0.5 rounded-full shadow-[0_0_10px_rgba(245,94,71,0.4)] uppercase tracking-widest">KIITO</span>
+                      </div>
                     </div>
                   </div>
                   
