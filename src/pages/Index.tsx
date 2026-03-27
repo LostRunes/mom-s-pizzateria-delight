@@ -54,10 +54,9 @@ const Index = () => {
       {showFloatingBtn && (
         <button
           onClick={() => setShowOrderPopup(true)}
-          className="fixed bottom-6 right-4 z-50 flex items-center gap-2 bg-primary text-primary-foreground font-heading font-bold px-5 py-3.5 rounded-full shadow-2xl shadow-primary/50 hover:scale-110 active:scale-95 transition-all duration-200 text-sm animate-bounce-slow"
-          style={{ animation: "pulse 2s infinite" }}
+          className="fixed bottom-6 right-4 z-50 flex items-center gap-2 bg-gradient-to-r from-green-400 to-green-700 text-black font-heading font-bold px-5 py-3.5 rounded-full shadow-2xl shadow-black/30 hover:scale-110 active:scale-95 transition-all duration-200 text-sm"
         >
-          🛒 Order
+          🛒 Order Now
         </button>
       )}
 
