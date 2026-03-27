@@ -9,7 +9,7 @@ const Hero = ({ onOrderClick }: HeroProps) => {
   return (
     <section
       id="home"
-      className="relative min-h-screen flex items-center justify-center overflow-hidden bg-transparent pt-8"
+      className="relative min-h-screen flex items-center justify-center overflow-hidden bg-transparent pt-20 lg:pt-24"
     >
       {/* Flour particles */}
       {[...Array(8)].map((_, i) => (
@@ -60,7 +60,7 @@ const Hero = ({ onOrderClick }: HeroProps) => {
       </div>
 
       {/* ── Mobile layout ── */}
-      <div className="lg:hidden flex flex-col items-center text-center px-5 relative z-10 w-full animate-slide-up pt-2 pb-8">
+      <div className="lg:hidden flex flex-col items-center text-center px-5 relative z-10 w-full animate-slide-up pt-12 pb-8">
 
         {/* Heading */}
         <h1 className="text-4xl font-bold text-foreground leading-tight mb-4 text-shadow-warm">
