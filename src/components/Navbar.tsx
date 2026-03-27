@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import { Button } from "@/components/ui/button";
-import { Menu, X } from "lucide-react";
+import { Menu, X, Pizza } from "lucide-react";
 
 const navItems = [
   { label: "Home", href: "#home" },
@@ -37,7 +37,7 @@ const Navbar = ({ onOrderClick }: NavbarProps) => {
           <span className="bg-gradient-to-r from-primary to-amber-500 bg-clip-text text-transparent">
             Mom's Pizzateria
           </span>
-          <span className="text-secondary text-2xl">🍕</span>
+          <Pizza className="text-black" size={28} strokeWidth={2.5} />
         </a>
 
         {/* Desktop nav */}

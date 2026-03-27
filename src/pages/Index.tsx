@@ -9,6 +9,7 @@ import ContactSection from "@/components/ContactSection";
 import Footer from "@/components/Footer";
 import Aurora from "@/components/Aurora";
 import OrderModal from "@/components/OrderModal";
+import { Pizza } from "lucide-react";
 
 const Index = () => {
   const [orderModalOpen, setOrderModalOpen] = useState(false);
@@ -56,7 +57,7 @@ const Index = () => {
           onClick={() => setShowOrderPopup(true)}
           className="fixed bottom-6 right-4 z-50 flex items-center gap-2 bg-gradient-to-r from-green-400 to-green-700 text-black font-heading font-bold px-5 py-3.5 rounded-full shadow-2xl shadow-black/30 hover:scale-110 active:scale-95 transition-all duration-200 text-sm"
         >
-          🛒 Order Now
+          <Pizza size={20} className="text-black" strokeWidth={2.5} /> Order Now
         </button>
       )}
 
@@ -87,8 +88,12 @@ const Index = () => {
             </button>
 
             <div className="px-7 pt-7 pb-8 flex flex-col items-center text-center gap-4">
-              {/* Pizza emoji big */}
-              <div className="text-5xl mb-1 animate-pizza-spin" style={{ animationDuration: "8s" }}>🍕</div>
+              {/* Black Pizza icon logo on white background for visibility */}
+              <div className="mb-1 animate-pizza-spin" style={{ animationDuration: "8s" }}>
+                <div className="w-16 h-16 bg-white rounded-full flex items-center justify-center shadow-lg border-2 border-primary/20">
+                  <Pizza size={36} className="text-black" strokeWidth={2.5} />
+                </div>
+              </div>
 
               {/* Title */}
               <div>
