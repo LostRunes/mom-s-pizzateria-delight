@@ -41,6 +41,17 @@ const Hero = ({ onOrderClick }: HeroProps) => {
             </a>
             <Button variant="heroOutline" size="xl" onClick={onOrderClick}>🛒 Order Now</Button>
           </div>
+          
+          <div className="mt-8 flex items-center justify-center lg:justify-start">
+            <div className="group relative inline-flex items-center gap-2 rounded-full border border-yellow-500/30 bg-yellow-500/10 px-5 py-2.5 text-sm font-semibold tracking-wide text-yellow-500 uppercase shadow-[0_0_20px_rgba(234,179,8,0.15)] transition-all hover:bg-yellow-500/20 hover:shadow-[0_0_30px_rgba(234,179,8,0.25)]">
+              <div className="absolute -inset-0.5 rounded-full bg-yellow-400/20 blur opacity-50 group-hover:opacity-100 transition duration-500"></div>
+              <span className="relative flex h-2.5 w-2.5">
+                <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-yellow-400 opacity-75"></span>
+                <span className="relative inline-flex rounded-full h-2.5 w-2.5 bg-yellow-500"></span>
+              </span>
+              <span className="relative">Currently only delivers in <span className="font-black text-yellow-400">CAMPUS 25</span></span>
+            </div>
+          </div>
         </div>
         <div className="flex-1 flex justify-center relative">
           <div className="relative group cursor-pointer">
@@ -118,6 +129,19 @@ const Hero = ({ onOrderClick }: HeroProps) => {
           <Button variant="heroOutline" size="lg" className="w-full text-sm py-2.5" onClick={onOrderClick}>
             🛒 Order Now
           </Button>
+        </div>
+
+        <div className="mt-6 flex items-center justify-center w-full animate-slide-up" style={{ animationDelay: "0.2s" }}>
+          <div className="relative inline-flex flex-col items-center gap-1.5 rounded-2xl border border-yellow-500/20 bg-gradient-to-b from-yellow-500/10 to-black/40 px-5 py-3 text-[10px] font-semibold tracking-wider text-yellow-500/90 uppercase shadow-[0_0_15px_rgba(234,179,8,0.1)] backdrop-blur-sm w-full max-w-xs">
+            <div className="flex items-center gap-1.5">
+              <span className="relative flex h-2 w-2">
+                <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-yellow-400 opacity-75"></span>
+                <span className="relative inline-flex rounded-full h-2 w-2 bg-yellow-500"></span>
+              </span>
+              Currently only delivers in
+            </div>
+            <span className="text-yellow-400 font-black text-base tracking-widest drop-shadow-[0_0_8px_rgba(234,179,8,0.5)]">CAMPUS 25</span>
+          </div>
         </div>
       </div>
     </section>
